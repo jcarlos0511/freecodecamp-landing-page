@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --font-rob: "Roboto", sans-serif;
+  --font-lat: "Lato", sans-serif;
+}
+body {
+  background-color: black;
+  color: white;
+  font-size: 1.15em;
+}
+h1,
+h2,
+h3,
+a,
+input {
+  font-family: var(--font-rob);
+  color: rgb(68, 214, 44);
+  padding: 0.255em;
+  text-decoration: none;
+}
+p,
+ul,
+li {
+  font-family: var(--font-lat);
+  padding: 0.5em;
+}
+.container {
+  width: 90%;
+  max-width: 75em;
+  margin: 1em auto;
+  display: grid;
+  gap: 1.25em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "article article article"
+    "features features features"
+    "main main main"
+    "spec spec spec"
+    "about about about"
+    "footer footer footer";
+}
+
+/* header */
+
+#header {
+  position: fixed;
+  display: flex;
+  width: 90%;
+  top: 0;
+  grid-area: header;
+  background: black;
+}
+.title {
+  font-family: var(--font-rob);
+  font-size: 1em;
+  font-weight: 400;
+  display: block;
+  padding: 0.625em;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 8px 6px -6px rgb(68, 214, 44);
+}
+
+.header-img {
+  max-width: 25em;
+  width: 100%;
+  /* margin-right: 40em; */
+}
+.img {
+  max-width: 80px;
+  width: 100%;
+  /* margin-right: 40em; */
+}
+
+.nav-link {
+  margin-top: 0.45em;
+  padding-top: 0.625em;
+  color: white;
+  display: block;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  transition: 0.2s ease all;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: rgb(68, 214, 44);
+}
+
+/* article */
+
+.article {
+  grid-area: article;
+}
+.article img {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  max-width: 100%;
+  width: 100%;
+}
+
+form {
+  padding: 1.5em;
+}
+.article form p {
+  text-align: center;
+}
+.article form .buttom {
+  display: flex;
+  justify-content: center;
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: 0.25em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: rgb(68, 214, 44);
+  color: black;
+  border: none;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* features */
+
+article .features {
+  grid-area: features;
+}
+
+.features .img-features {
+  padding-top: 5em;
+  max-width: 80px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+}
+
+/* main */
+
+.main {
+  grid-area: main;
+  padding-top: 3em;
+  text-align: center;
+}
+
+/* spec */
+
+#specs {
+  grid-area: spec;
+  padding-top: 5em;
+}
+.desc {
+  color: grey;
+  text-align: center;
+}
+
+.section ul {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25%;
+}
+
+/* about  */
+
+#about {
+  grid-area: about;
+  padding-top: 3em;
+}
+.about p {
+  margin-left: 25%;
+}
+
+/* footer */
+
+.footer {
+  grid-area: footer;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/*responsive*/
+
+@media (min-width: 1201px) {
+  /* .nav-img {
+    margin-right: 30em;
+  } */
+  .nav-link {
+    margin-top: 0.95em;
+  }
+
+  .article form .buttom {
+    margin-left: 47%;
+    margin-right: 47%;
+    padding: 0.25em;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* .nav-img {
+    margin-right: 20em;
+  } */
+  body {
+    font-size: 1.05em;
+  }
+  .article form .buttom {
+    margin-left: 45%;
+    margin-right: 45%;
+    padding: 0.25em;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .nav-img {
+    margin-right: 10em;
+  } */
+  body {
+    font-size: 1em;
+  }
+  .nav-link {
+    font-size: 0.85em;
+  }
+  .article form .buttom {
+    margin-left: 43%;
+    margin-right: 43%;
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 425px) {
+  /* .nav-img {
+    margin-right: 8.5em;
+  } */
+  body {
+    font-size: 0.95em;
+  }
+  .nav-link {
+    font-size: 0.75em;
+    text-align: right;
+  }
+  .article form .buttom {
+    margin-left: 38%;
+    margin-right: 38%;
+    padding: 0.25em;
+    font-size: 0.6em;
+  }
+}
